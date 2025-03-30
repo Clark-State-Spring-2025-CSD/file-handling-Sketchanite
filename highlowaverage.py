@@ -7,3 +7,25 @@
 #Highest number
 #Lowest number
 #Correct answers for the included file:
+
+with open("numbers.txt", "r") as file:
+    lines = file.read().splitlines()
+
+numbers = [int(line) for line in lines if line]
+
+count = len(numbers)
+
+total = sum(numbers)
+
+average = total / count if count != 0 else 0
+
+highest = max(numbers)
+
+lowest = min(numbers)
+
+
+print("How many numbers in the file:", count)
+print("Total of all the numbers:", total)
+print("Average:", average)
+print("Highest number:", highest)
+print("Lowest number:", lowest)
